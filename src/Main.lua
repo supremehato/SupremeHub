@@ -1,17 +1,17 @@
 --[[
 
-	AirHub V2 by Supreme © CC0 1.0 Universal (2023)
-	https://github.com/Supreme
+	AirHub V2 by Exunys © CC0 1.0 Universal (2023)
+	https://github.com/Exunys
 
 ]]
 
 --// Loaded Check
 
-if SupremeV1Loaded or SupremeV1Loading or Supreme then
+if AirHubV2Loaded or AirHubV2Loading or AirHub then
 	return
 end
 
-getgenv().SupremeV1Loading = true
+getgenv().AirHubV2Loading = true
 
 --// Cache
 
@@ -25,11 +25,11 @@ local osdate = os.date
 
 --// Launching
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Supreme/Roblox-Functions-Library/main/Library.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Roblox-Functions-Library/main/Library.lua"))()
 
-local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/main/src/UI%20Library.lua"))()
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/main/src/ESP.lua"))()
-local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/main/src/Aimbot.lua"))()
+local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub-V2/main/src/UI%20Library.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Exunys-ESP/main/src/ESP.lua"))()
+local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V3/main/src/Aimbot.lua"))()
 
 --// Variables
 
@@ -893,7 +893,7 @@ SettingsSection:Button({
 		GUI:Unload()
 		ESP:Exit()
 		Aimbot:Exit()
-		getgenv().SupremeV1Loaded = nil
+		getgenv().AirHubV2Loaded = nil
 	end
 })
 
@@ -932,12 +932,12 @@ ProfilesSection:Button({
 	end
 })
 
-InformationSection:Label("Made by Supreme")
+InformationSection:Label("Made by Exunys")
 
 InformationSection:Button({
 	Name = "Copy GitHub",
 	Callback = function()
-		setclipboard("https://github.com/Supreme")
+		setclipboard("https://github.com/Exunys")
 	end
 })
 
@@ -983,8 +983,8 @@ end)
 
 ESP.Load()
 Aimbot.Load()
-getgenv().SupremeV1Loaded = true
-getgenv().SupremeV1Loading = nil
+getgenv().AirHubV2Loaded = true
+getgenv().AirHubV2Loading = nil
 
 GeneralSignal:Fire()
 GUI:Close()
