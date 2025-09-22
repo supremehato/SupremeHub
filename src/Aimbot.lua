@@ -1,7 +1,7 @@
 --[[
 
-	Universal Aimbot Module by Supreme © CC0 1.0 Universal (2023 - 2024)
-	https://github.com/Supreme
+	Universal Aimbot Module by Exunys © CC0 1.0 Universal (2023 - 2024)
+	https://github.com/Exunys
 
 ]]
 
@@ -80,13 +80,13 @@ end
 
 --// Checking for multiple processes
 
-if SupremeDeveloperAimbot and SupremeDeveloperAimbot.Exit then
-	SupremeDeveloperAimbot:Exit()
+if ExunysDeveloperAimbot and ExunysDeveloperAimbot.Exit then
+	ExunysDeveloperAimbot:Exit()
 end
 
 --// Environment
 
-getgenv().SupremeDeveloperAimbot = {
+getgenv().ExunysDeveloperAimbot = {
 	DeveloperSettings = {
 		UpdateMode = "RenderStepped",
 		TeamCheckOption = "TeamColor",
@@ -136,7 +136,7 @@ getgenv().SupremeDeveloperAimbot = {
 	FOVCircle = Drawingnew("Circle")
 }
 
-local Environment = getgenv().SupremeDeveloperAimbot
+local Environment = getgenv().ExunysDeveloperAimbot
 
 setrenderproperty(Environment.FOVCircle, "Visible", false)
 setrenderproperty(Environment.FOVCircleOutline, "Visible", false)
@@ -338,8 +338,8 @@ end)
 
 --// Functions
 
-function Environment.Exit(self) -- METHOD | SupremeDeveloperAimbot:Exit(<void>)
-	assert(self, "SUPREME_AIMBOT-V3.Exit: Missing parameter #1 \"self\" <table>.")
+function Environment.Exit(self) -- METHOD | ExunysDeveloperAimbot:Exit(<void>)
+	assert(self, "EXUNYS_AIMBOT-V3.Exit: Missing parameter #1 \"self\" <table>.")
 
 	for Index, _ in next, ServiceConnections do
 		Disconnect(ServiceConnections[Index])
@@ -349,10 +349,10 @@ function Environment.Exit(self) -- METHOD | SupremeDeveloperAimbot:Exit(<void>)
 
 	self.FOVCircle:Remove()
 	self.FOVCircleOutline:Remove()
-	getgenv().SupremeDeveloperAimbot = nil
+	getgenv().ExunysDeveloperAimbot = nil
 end
 
-function Environment.Restart() -- SupremeDeveloperAimbot.Restart(<void>)
+function Environment.Restart() -- ExunysDeveloperAimbot.Restart(<void>)
 	for Index, _ in next, ServiceConnections do
 		Disconnect(ServiceConnections[Index])
 	end
@@ -360,33 +360,33 @@ function Environment.Restart() -- SupremeDeveloperAimbot.Restart(<void>)
 	Load()
 end
 
-function Environment.Blacklist(self, Username) -- METHOD | SupremeDeveloperAimbot:Blacklist(<string> Player Name)
-	assert(self, "SUPREME_AIMBOT-V3.Blacklist: Missing parameter #1 \"self\" <table>.")
-	assert(Username, "SUPREME_AIMBOT-V3.Blacklist: Missing parameter #2 \"Username\" <string>.")
+function Environment.Blacklist(self, Username) -- METHOD | ExunysDeveloperAimbot:Blacklist(<string> Player Name)
+	assert(self, "EXUNYS_AIMBOT-V3.Blacklist: Missing parameter #1 \"self\" <table>.")
+	assert(Username, "EXUNYS_AIMBOT-V3.Blacklist: Missing parameter #2 \"Username\" <string>.")
 
 	Username = FixUsername(Username)
 
-	assert(self, "SUPREME_AIMBOT-V3.Blacklist: User "..Username.." couldn't be found.")
+	assert(self, "EXUNYS_AIMBOT-V3.Blacklist: User "..Username.." couldn't be found.")
 
 	self.Blacklisted[#self.Blacklisted + 1] = Username
 end
 
 function Environment.Whitelist(self, Username) -- METHOD | ExunysDeveloperAimbot:Whitelist(<string> Player Name)
-	assert(self, "SUPREME_AIMBOT-V3.Whitelist: Missing parameter #1 \"self\" <table>.")
-	assert(Username, "SUPREME_AIMBOT-V3.Whitelist: Missing parameter #2 \"Username\" <string>.")
+	assert(self, "EXUNYS_AIMBOT-V3.Whitelist: Missing parameter #1 \"self\" <table>.")
+	assert(Username, "EXUNYS_AIMBOT-V3.Whitelist: Missing parameter #2 \"Username\" <string>.")
 
 	Username = FixUsername(Username)
 
-	assert(Username, "SUPREME_AIMBOT-V3.Whitelist: User "..Username.." couldn't be found.")
+	assert(Username, "EXUNYS_AIMBOT-V3.Whitelist: User "..Username.." couldn't be found.")
 
 	local Index = tablefind(self.Blacklisted, Username)
 
-	assert(Index, "SUPREME_AIMBOT-V3.Whitelist: User "..Username.." is not blacklisted.")
+	assert(Index, "EXUNYS_AIMBOT-V3.Whitelist: User "..Username.." is not blacklisted.")
 
 	tableremove(self.Blacklisted, Index)
 end
 
-function Environment.GetClosestPlayer() -- SupremeDeveloperAimbot.GetClosestPlayer(<void>)
+function Environment.GetClosestPlayer() -- ExunysDeveloperAimbot.GetClosestPlayer(<void>)
 	GetClosestPlayer()
 	local Value = Environment.Locked
 	CancelLock()
@@ -394,7 +394,7 @@ function Environment.GetClosestPlayer() -- SupremeDeveloperAimbot.GetClosestPlay
 	return Value
 end
 
-Environment.Load = Load -- SupremeDeveloperAimbot.Load()
+Environment.Load = Load -- ExunysDeveloperAimbot.Load()
 
 setmetatable(Environment, {__call = Load})
 
