@@ -3829,4 +3829,4 @@ end
 return library
 
 -- Forked from https://github.com/vozoid/ui-libraries/blob/main/drawing/void/source.lua
--- Edited by Exunys for AirHub V2
+-- Edited by Supreme for AirHub V2
