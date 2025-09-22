@@ -1,8 +1,8 @@
 --[[
 
-	Universal Extra-Sensory Perception (ESP) Module by Supreme © CC0 1.0 Universal (2023 - 2024)
+	Universal Extra-Sensory Perception (ESP) Module by Exunys © CC0 1.0 Universal (2023 - 2024)
 
-	https://github.com/Supreme
+	https://github.com/Exunys
 
 	- ESP						  > [Players, NPCs & Parts]
 	- Tracer					  > [Players, NPCs & Parts]
@@ -37,7 +37,7 @@ if not Drawing or not Drawing.new or not Drawing.Fonts then
 	until Drawing and Drawing.new and type(Drawing.new) == "function" and Drawing.Fonts and type(Drawing.Fonts) == "table"
 end
 
-local ConfigLibrary = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/Main.lua"))()
+local ConfigLibrary = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Exunys/Config-Library/main/Main.lua"))()
 
 local Vector2new, Vector3zero, CFramenew = Vector2.new, Vector3.zero, CFrame.new
 local Drawingnew, DrawingFonts = Drawing.new, Drawing.Fonts
@@ -67,7 +67,7 @@ end, function(self, Index, Value)
 end
 
 if identifyexecutor() == "Solara" then -- Quads are broken on Solara.
-	local DrawQuad = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/Main.lua"))() -- Custom Quad Drawing Object
+	local DrawQuad = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Exunys/Custom-Quad-Render-Object/main/Main.lua"))() -- Custom Quad Drawing Object
 	local _Drawingnew = clonefunction(Drawing.new)
 
 	Drawingnew = function(...)
@@ -157,7 +157,7 @@ if not Degrade then
 	setrenderproperty = getupvalue(getmetatable(TemporaryDrawing).__newindex, 4)
 	TemporaryDrawing.Remove(TemporaryDrawing)
 else
-	local DrawQuad = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/Main.lua"))() -- Custom Quad Drawing Object
+	local DrawQuad = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/Exunys/Custom-Quad-Render-Object/main/Main.lua"))() -- Custom Quad Drawing Object
 	local _Drawingnew = clonefunction(Drawing.new)
 
 	local TemporaryDrawing = Drawingnew("Line")
@@ -192,7 +192,7 @@ else
 
 	TemporaryDrawing.Remove(TemporaryDrawing)
 
-	warn("SUPREME_ESP > Your exploit does not support this module's optimizations! The visuals might be laggy and decrease performance.")
+	warn("EXUNYS_ESP > Your exploit does not support this module's optimizations! The visuals might be laggy and decrease performance.")
 end
 ]=]
 
@@ -214,15 +214,15 @@ local Inf, Nan, Loaded, CrosshairParts = 1 / 0, 0 / 0, false, {
 
 --// Checking for multiple processes
 
-if SupremeDeveloperESP and SupremeDeveloperESP.Exit then
-	SupremeDeveloperESP:Exit()
+if ExunysDeveloperESP and ExunysDeveloperESP.Exit then
+	ExunysDeveloperESP:Exit()
 end
 
 --// Settings
 
-getgenv().SupremeDeveloperESP = {
+getgenv().ExunysDeveloperESP = {
 	DeveloperSettings = {
-		Path = "Supreme Developer/Supreme ESP/Configuration.cfg",
+		Path = "Exunys Developer/Exunys ESP/Configuration.cfg",
 		UnwrapOnCharacterAbsence = false,
 		UpdateMode = "RenderStepped",
 		TeamCheckOption = "TeamColor",
@@ -381,7 +381,7 @@ getgenv().SupremeDeveloperESP = {
 	}
 }
 
-local Environment = getgenv().SupremeDeveloperESP
+local Environment = getgenv().ExunysDeveloperESP
 
 --// Functions
 
@@ -421,7 +421,7 @@ local CoreFunctions = {
 		local Result = ""
 
 		for _ = 1, Bits do
-			Result ..= ("SUPREME_ESP")[mathrandom(1, 2) == 1 and "upper" or "lower"](stringchar(mathrandom(97, 122)))
+			Result ..= ("EXUNYS_ESP")[mathrandom(1, 2) == 1 and "upper" or "lower"](stringchar(mathrandom(97, 122)))
 		end
 
 		return Result
@@ -1468,7 +1468,7 @@ local UtilityFunctions = {
 	end,
 
 	WrapObject = function(self, Object, PseudoName, Allowed, RenderDistance)
-		assert(self, "SUPREME_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
+		assert(self, "EXUNYS_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
 
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
 			Object = __index(Object, "PrimaryPart")
@@ -1524,7 +1524,7 @@ local UtilityFunctions = {
 			if not pcall(function()
 				return __index(Entry.Object, "Position"), __index(Entry.Object, "CFrame")
 			end) then
-				warn("SUPREME_ESP > UtilityFunctions.WrapObject - Attempted to wrap object of an unsupported class type: \""..(__index(Entry.Object, "ClassName") or "N / A").."\"")
+				warn("EXUNYS_ESP > UtilityFunctions.WrapObject - Attempted to wrap object of an unsupported class type: \""..(__index(Entry.Object, "ClassName") or "N / A").."\"")
 				return self.UnwrapObject(Entry.Hash)
 			end
 
@@ -1690,7 +1690,7 @@ Environment.UnwrapPlayers = function() -- (<void>) => <boolean> Success Status
 end
 
 Environment.UnwrapAll = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "SUPREME_ESP.UnwrapAll: Missing parameter #1 \"self\" <table>.")
+	assert(self, "EXUNYS_ESP.UnwrapAll: Missing parameter #1 \"self\" <table>.")
 
 	if self.UnwrapPlayers() and CrosshairParts.LeftLine then
 		self.RemoveCrosshair()
@@ -1700,7 +1700,7 @@ Environment.UnwrapAll = function(self) -- METHOD | (<void>) => <void>
 end
 
 Environment.Restart = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "SUPREME_ESP.Restart: Missing parameter #1 \"self\" <table>.")
+	assert(self, "EXUNYS_ESP.Restart: Missing parameter #1 \"self\" <table>.")
 
 	local Objects = {}
 
@@ -1723,7 +1723,7 @@ Environment.Restart = function(self) -- METHOD | (<void>) => <void>
 end
 
 Environment.Exit = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "SUPREME_ESP.Exit: Missing parameter #1 \"self\" <table>.")
+	assert(self, "EXUNYS_ESP.Exit: Missing parameter #1 \"self\" <table>.")
 
 	if self:UnwrapAll() then
 		for _, Connection in next, self.UtilityAssets.ServiceConnections do
@@ -1743,7 +1743,7 @@ Environment.Exit = function(self) -- METHOD | (<void>) => <void>
 		end
 
 		for Index, _ in next, Environment do
-			getgenv().SupremeDeveloperESP[Index] = nil
+			getgenv().ExunysDeveloperESP[Index] = nil
 		end
 
 		LoadESP = nil; Recursive = nil; Loaded = false
@@ -1752,7 +1752,7 @@ Environment.Exit = function(self) -- METHOD | (<void>) => <void>
 			cleardrawcache()
 		end
 
-		getgenv().SupremeDeveloperESP = nil
+		getgenv().ExunysDeveloperESP = nil
 	end
 end
 
@@ -1794,21 +1794,21 @@ Environment.Load = function() -- (<void>) => <void>
 end
 
 Environment.UpdateConfiguration = function(DeveloperSettings, Settings, Properties) -- (<table> DeveloperSettings, <table> Settings, <table> Properties) => <table> New Environment
-	assert(DeveloperSettings, "SUPREME_ESP.UpdateConfiguration: Missing parameter #1 \"DeveloperSettings\" <table>.")
-	assert(Settings, "SUPREME_ESP.UpdateConfiguration: Missing parameter #2 \"Settings\" <table>.")
-	assert(Properties, "SUPREME_ESP.UpdateConfiguration: Missing parameter #3 \"Properties\" <table>.")
+	assert(DeveloperSettings, "EXUNYS_ESP.UpdateConfiguration: Missing parameter #1 \"DeveloperSettings\" <table>.")
+	assert(Settings, "EXUNYS_ESP.UpdateConfiguration: Missing parameter #2 \"Settings\" <table>.")
+	assert(Properties, "EXUNYS_ESP.UpdateConfiguration: Missing parameter #3 \"Properties\" <table>.")
 
-	getgenv().SupremeDeveloperESP.DeveloperSettings = DeveloperSettings
-	getgenv().SupremeDeveloperESP.Settings = Settings
-	getgenv().SupremeDeveloperESP.Properties = Properties
+	getgenv().ExunysDeveloperESP.DeveloperSettings = DeveloperSettings
+	getgenv().ExunysDeveloperESP.Settings = Settings
+	getgenv().ExunysDeveloperESP.Properties = Properties
 
-	Environment = getgenv().SupremeDeveloperESP
+	Environment = getgenv().ExunysDeveloperESP
 
 	return Environment
 end
 
 Environment.LoadConfiguration = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "Supreme_ESP.LoadConfiguration: Missing parameter #1 \"self\" <table>.")
+	assert(self, "EXUNYS_ESP.LoadConfiguration: Missing parameter #1 \"self\" <table>.")
 
 	local Path = self.DeveloperSettings.Path
 
@@ -1826,7 +1826,7 @@ Environment.LoadConfiguration = function(self) -- METHOD | (<void>) => <void>
 end
 
 Environment.SaveConfiguration = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "Supreme_ESP.SaveConfiguration: Missing parameter #1 \"self\" <table>.")
+	assert(self, "EXUNYS_ESP.SaveConfiguration: Missing parameter #1 \"self\" <table>.")
 
 	local DeveloperSettings = self.DeveloperSettings
 
