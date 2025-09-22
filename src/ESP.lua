@@ -192,7 +192,7 @@ else
 
 	TemporaryDrawing.Remove(TemporaryDrawing)
 
-	warn("Supreme_ESP > Your exploit does not support this module's optimizations! The visuals might be laggy and decrease performance.")
+	warn("SUPREME_ESP > Your exploit does not support this module's optimizations! The visuals might be laggy and decrease performance.")
 end
 ]=]
 
@@ -421,7 +421,7 @@ local CoreFunctions = {
 		local Result = ""
 
 		for _ = 1, Bits do
-			Result ..= ("Supreme_ESP")[mathrandom(1, 2) == 1 and "upper" or "lower"](stringchar(mathrandom(97, 122)))
+			Result ..= ("SUPREME_ESP")[mathrandom(1, 2) == 1 and "upper" or "lower"](stringchar(mathrandom(97, 122)))
 		end
 
 		return Result
@@ -1468,7 +1468,7 @@ local UtilityFunctions = {
 	end,
 
 	WrapObject = function(self, Object, PseudoName, Allowed, RenderDistance)
-		assert(self, "Supreme_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
+		assert(self, "SUPREME_ESP > UtilityFunctions.WrapObject - Internal error, unassigned parameter \"self\".")
 
 		if pcall(gethiddenproperty, Object, "PrimaryPart") then
 			Object = __index(Object, "PrimaryPart")
@@ -1524,7 +1524,7 @@ local UtilityFunctions = {
 			if not pcall(function()
 				return __index(Entry.Object, "Position"), __index(Entry.Object, "CFrame")
 			end) then
-				warn("Supreme_ESP > UtilityFunctions.WrapObject - Attempted to wrap object of an unsupported class type: \""..(__index(Entry.Object, "ClassName") or "N / A").."\"")
+				warn("SUPREME_ESP > UtilityFunctions.WrapObject - Attempted to wrap object of an unsupported class type: \""..(__index(Entry.Object, "ClassName") or "N / A").."\"")
 				return self.UnwrapObject(Entry.Hash)
 			end
 
@@ -1690,7 +1690,7 @@ Environment.UnwrapPlayers = function() -- (<void>) => <boolean> Success Status
 end
 
 Environment.UnwrapAll = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "Supreme_ESP.UnwrapAll: Missing parameter #1 \"self\" <table>.")
+	assert(self, "SUPREME_ESP.UnwrapAll: Missing parameter #1 \"self\" <table>.")
 
 	if self.UnwrapPlayers() and CrosshairParts.LeftLine then
 		self.RemoveCrosshair()
@@ -1700,7 +1700,7 @@ Environment.UnwrapAll = function(self) -- METHOD | (<void>) => <void>
 end
 
 Environment.Restart = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "Supreme_ESP.Restart: Missing parameter #1 \"self\" <table>.")
+	assert(self, "SUPREME_ESP.Restart: Missing parameter #1 \"self\" <table>.")
 
 	local Objects = {}
 
@@ -1723,7 +1723,7 @@ Environment.Restart = function(self) -- METHOD | (<void>) => <void>
 end
 
 Environment.Exit = function(self) -- METHOD | (<void>) => <void>
-	assert(self, "Supreme_ESP.Exit: Missing parameter #1 \"self\" <table>.")
+	assert(self, "SUPREME_ESP.Exit: Missing parameter #1 \"self\" <table>.")
 
 	if self:UnwrapAll() then
 		for _, Connection in next, self.UtilityAssets.ServiceConnections do
@@ -1794,9 +1794,9 @@ Environment.Load = function() -- (<void>) => <void>
 end
 
 Environment.UpdateConfiguration = function(DeveloperSettings, Settings, Properties) -- (<table> DeveloperSettings, <table> Settings, <table> Properties) => <table> New Environment
-	assert(DeveloperSettings, "Supreme_ESP.UpdateConfiguration: Missing parameter #1 \"DeveloperSettings\" <table>.")
-	assert(Settings, "Supreme_ESP.UpdateConfiguration: Missing parameter #2 \"Settings\" <table>.")
-	assert(Properties, "Supreme_ESP.UpdateConfiguration: Missing parameter #3 \"Properties\" <table>.")
+	assert(DeveloperSettings, "SUPREME_ESP.UpdateConfiguration: Missing parameter #1 \"DeveloperSettings\" <table>.")
+	assert(Settings, "SUPREME_ESP.UpdateConfiguration: Missing parameter #2 \"Settings\" <table>.")
+	assert(Properties, "SUPREME_ESP.UpdateConfiguration: Missing parameter #3 \"Properties\" <table>.")
 
 	getgenv().SupremeDeveloperESP.DeveloperSettings = DeveloperSettings
 	getgenv().SupremeDeveloperESP.Settings = Settings
