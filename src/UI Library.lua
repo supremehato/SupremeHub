@@ -25,7 +25,7 @@ local osdate = os.date
 
 --// Launching
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/LIbrary.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/Library.lua"))()
 
 local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/UI%20Library.lua"))()
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/supremehato/SupremeHub/refs/heads/main/src/ESP.lua"))()
