@@ -7,11 +7,11 @@
 
 --// Loaded Check
 
-if AirHubV2Loaded or AirHubV2Loading or AirHub then
+if SupremeV1Loaded or SupremeV1Loading or Supreme then
 	return
 end
 
-getgenv().AirHubV2Loading = true
+getgenv().SupremeV1Loading = true
 
 --// Cache
 
@@ -893,7 +893,7 @@ SettingsSection:Button({
 		GUI:Unload()
 		ESP:Exit()
 		Aimbot:Exit()
-		getgenv().AirHubV2Loaded = nil
+		getgenv().SupremeV1Loaded = nil
 	end
 })
 
@@ -983,8 +983,8 @@ end)
 
 ESP.Load()
 Aimbot.Load()
-getgenv().AirHubV2Loaded = true
-getgenv().AirHubV2Loading = nil
+getgenv().SupremeV1Loaded = true
+getgenv().SupremeV1Loading = nil
 
 GeneralSignal:Fire()
 GUI:Close()
